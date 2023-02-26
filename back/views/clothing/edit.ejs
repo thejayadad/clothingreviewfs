@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
+<% layout("layouts/boilerplate.ejs")%>
+
     <form action="/clothings/<%=clothing._id%>?_method=PUT" method="POST">
             <input type="text" id="title" name="title" value="<%=clothing.title%>">
             <input type="number" id="price" name="price" value="<%=clothing.price%>">
             <button>Update Clothing</button>
     </form>
     <a href="/clothing">All Clothing</a>
-</body>
-</html>

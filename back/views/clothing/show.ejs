@@ -1,18 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2><%=clothing.title%></h2>
+
+
+<% layout("layouts/boilerplate.ejs")%>
+<section id = "collection" class = "py-5">
+    <div class = "container">
+        <div class = "title text-center">
+            <h2 class = "position-relative d-inline-block">Show Clothing</h2>
+        </div>
+          <a href="/clothing/new">New Clothing</a>
+
+            <div class = "d-flex flex-wrap justify-content-center collection-list mt-4 row gx-0 gy-3">
+
+
+            <div class = "col-md-6 col-lg-4 col-xl-3 p-2 best">
+                <div class = "collection-img position-relative">
+                    <img src = "https://images.pexels.com/photos/3353621/pexels-photo-3353621.jpeg?auto=compress&cs=tinysrgb&w=600" class = "w-100">
+                    <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                </div>
+                <div class = "text-center">
+                    <p><%=clothing.description%></p>
+                    <div class = "rating mt-3">
+                        <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                        <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                        <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                        <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                        <span class = "text-primary"><i class = "fas fa-star"></i></span>
+                    </div>
+                    <p class = "text-capitalize my-1"><a href="/clothing/<%=clothing._id%>"><%=clothing.title%></p>
+                    <span class = "fw-bold">$ <%=clothing.price%></span>
+                </div>
+            </div>
+            </div>
+
+
+    </div>
+
+    </section>
+
+
+
+    <!-- <h2><%=clothing.title%></h2>
     <h2><%=clothing.price%></h2>
     <a href="/clothing">All Clothing</a>
     <a href="/clothing/<%=clothing._id%>/edit">Edit </a>
     <p><form action="/clothing/<%=clothing._id%>?_method=DELETE" method="POST">
         <button>Delete</button>
-    </form></p>
-</body>
-</html>
+    </form></p> -->
